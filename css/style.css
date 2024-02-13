@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+main {
+  display: flex;
+}
+main .filtros {
+  width: 20%;
+  background-color: green;
+}
+main .galeriaCartas {
+  width: 80%;
+  height: 100%;
+  padding: 1rem;
+  background-color: red;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+}
+main .galeriaCartas .cartaGaleriaCartas {
+  background-color: blue;
+  width: 230px;
+  height: 360px;
+}
+main .galeriaCartas .cartaGaleriaCartas img {
+  width: 230px;
+  height: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */

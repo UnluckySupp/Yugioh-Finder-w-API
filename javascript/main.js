@@ -1,9 +1,8 @@
-import {url} from "./variables.js"
+import {url} from "./variables.js";
+import {renderizarCartas} from "./funciones.js";
 
 fetch(url)
     .then((response) => response.json())
-    .then((data) => mostrarData(data.data))
+    .then((data) => renderizarCartas(data.data))
 
-const mostrarData = (data) =>{
-    console.log(data);
-}
+
