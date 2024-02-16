@@ -8,13 +8,16 @@ p{
 }
 // galeriaCartas
 main{
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    grid-template-rows: auto 1fr;
+
     .filtros{
-        width: 20%;
+        grid-column:1/2 ;
         background-color: green;
     }
     .galeriaCartas{
-        width: 80%;
+        grid-column: 2/3;
         height: 100%;
         padding: 1rem;
         background-color: red;
@@ -37,5 +40,9 @@ main{
                 height: 100%;
             }
         }
+    }
+    .listadoButton{
+        grid-column: 2/3;
+        grid-row: 2/3;
     }
 }

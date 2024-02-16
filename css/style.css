@@ -8,14 +8,16 @@ p {
 }
 
 main {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  grid-template-rows: auto 1fr;
 }
 main .filtros {
-  width: 20%;
+  grid-column: 1/2;
   background-color: green;
 }
 main .galeriaCartas {
-  width: 80%;
+  grid-column: 2/3;
   height: 100%;
   padding: 1rem;
   background-color: red;
@@ -33,6 +35,10 @@ main .galeriaCartas .cartaGaleriaCartas {
 main .galeriaCartas .cartaGaleriaCartas img {
   width: 230px;
   height: 100%;
+}
+main .listadoButton {
+  grid-column: 2/3;
+  grid-row: 2/3;
 }
 
 /*# sourceMappingURL=style.css.map */
