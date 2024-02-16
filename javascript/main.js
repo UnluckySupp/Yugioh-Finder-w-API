@@ -35,13 +35,27 @@ filtrarPorTexto.addEventListener("keyup", (e) => {
 
     if (e.target.value === ""){
         dataCartasFiltradas = dataCartas;
-        console.log(dataCartas);
     } else if (e.target.value !== ""){
         galeriaCartas.innerHTML = "";
         renderizarCartas(dataCartasFiltradas);
     }
-    
 })
+
+//Filtrar por nombre
+
+const filtrarPorNombre = (orden) => {
+    let cartas;
+
+    if(orden === "Ascendent"){
+        cartas = dataCartas.sort((a, b) => {
+            if(a.name.toLowerCase() > b.name.toLowerCase()){
+                return 1
+            } else if(a.name.toLowerCase() < b.name.toLowerCase()) {
+            
+            }
+        })
+    }
+}
 
 //Funciones Galeria
 const renderizarCartas = (data) => {
