@@ -17,8 +17,7 @@ main{
         background-color: green;
     }
     .galeriaCartas{
-        grid-column: 2/3;
-        min-height: 400px;
+        width: 80%;
         height: 100%;
         padding: 1rem;
         background-color: $color-fondo;
@@ -172,5 +171,9 @@ main{
                 z-index: 4;
             }
         }
+    }
+    .listadoButton{
+        grid-column: 2/3;
+        grid-row: 2/3;
     }
 }

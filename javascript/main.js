@@ -1,7 +1,7 @@
 //Variables Header
 
 //Variables Filtros
-
+const filtrarPorTexto = document.getElementById("filtrarObjeto");
 
 //Variables Galeria
 //variables para funciones
@@ -9,6 +9,7 @@ let url = "https://db.ygoprodeck.com/api/v7/cardinfo.php";
 const cartasPorPagina = 36;
 let paginaActual = 0;
 let dataCartas;
+let dataCartasFiltradas = dataCartas;
 //variables del DOM
 let galeriaCartas = document.getElementById("galeriaCartas");
 let buttonAtras2 = document.getElementById("buttonAtras2");
@@ -22,6 +23,39 @@ let buttonAdelante2 = document.getElementById("buttonAdelante2");
 //FuncionesHeader
 
 //FuncionesFiltros
+//Filtrar por input
+filtrarPorTexto.addEventListener("keyup", (e) => {
+    const textoFiltrado = e.target.value.trim().toLowerCase(); // Eliminar espacios en blanco al principio y al final
+    const expresionRegular = new RegExp(textoFiltrado.replace(/[^a-zA-Z\d\s.l]/g, ''), 'i'); // Crear expresión regular ignorando caracteres no alfabéticos
+
+    const cartasFiltradasPorTexto = dataCartas.filter((carta) => expresionRegular.test(carta.name.toLowerCase()));
+
+    dataCartasFiltradas = cartasFiltradasPorTexto;
+    renderizarCartas(dataCartasFiltradas);
+
+    if (e.target.value === ""){
+        dataCartasFiltradas = dataCartas;
+    } else if (e.target.value !== ""){
+        galeriaCartas.innerHTML = "";
+        renderizarCartas(dataCartasFiltradas);
+    }
+})
+
+//Filtrar por nombre
+
+const filtrarPorNombre = (orden) => {
+    let cartas;
+
+    if(orden === "Ascendent"){
+        cartas = dataCartas.sort((a, b) => {
+            if(a.name.toLowerCase() > b.name.toLowerCase()){
+                return 1
+            } else if(a.name.toLowerCase() < b.name.toLowerCase()) {
+            
+            }
+        })
+    }
+}
 
 //Funciones Galeria
 const renderizarCartas = (data) => {
@@ -31,11 +65,10 @@ const renderizarCartas = (data) => {
     let cartasSeccionadas = data.slice(inicio, fin);
     
     cartasSeccionadas.forEach(item =>{
-        let carta = document.createElement("div");
+    let carta = document.createElement("div");
     carta.classList.add("cartaGaleriaCartas");
     carta.innerHTML=`
-    <img class="imagenCarta" src=${item.card_images[0].image_url_small} alt="${item.name}">
-   
+    <img src=${item.card_images[0].image_url_small} alt="${item.name}">
     `
      galeriaCartas.append(carta);
     })
@@ -85,33 +118,30 @@ fetch(url)
     .then((response) => response.json())
     .then((responseData) => {
         dataCartas = responseData.data;
-        console.log(responseData);
-        console.log(dataCartas);
         renderizarCartas(dataCartas);
         actualizacionBotones(dataCartas);
     });
         
 buttonAtras2.addEventListener("click", ()=>{
     paginaActual-=2;
-    renderizarCartas(dataCartas);
-    actualizacionBotones(dataCartas);
+    renderizarCartas(dataCartasFiltradas);
+    actualizacionBotones(dataCartasFiltradas);
 });
     
 buttonAtras1.addEventListener("click", ()=>{
     paginaActual--;
-    renderizarCartas(dataCartas);
-    actualizacionBotones(dataCartas);
+    renderizarCartas(dataCartasFiltradas);
+    actualizacionBotones(dataCartasFiltradas);
 });
     
 buttonAdelante1.addEventListener("click", ()=>{
     paginaActual++;
-    renderizarCartas(dataCartas);
-    actualizacionBotones(dataCartas);
+    renderizarCartas(dataCartasFiltradas);
+    actualizacionBotones(dataCartasFiltradas);
 });
     
 buttonAdelante2.addEventListener("click", ()=>{
     paginaActual+=2;
-    renderizarCartas(dataCartas);
-    actualizacionBotones(dataCartas);
-    console.log(paginaActual)
+    renderizarCartas(dataCartasFiltradas);
+    actualizacionBotones(dataCartasFiltradas);
 });
