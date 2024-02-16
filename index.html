@@ -12,7 +12,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="body">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">Navbar</a>
@@ -53,30 +53,48 @@
     </header>
     <main>
       <div class="filtros"></div>
-      <div class="galeriaCartas">
-          <div class="cartaGaleriaCartas">
-              <img src="https://images.ygoprodeck.com/images/cards_small/6983839.jpg" alt="">
-          </div>
-          <div class="cartaGaleriaCartas">
-              <img src="https://images.ygoprodeck.com/images/cards_small/6983839.jpg" alt="">
-          </div> <div class="cartaGaleriaCartas">
-              <img src="https://images.ygoprodeck.com/images/cards_small/6983839.jpg" alt="">
-          </div> <div class="cartaGaleriaCartas">
-              <img src="https://images.ygoprodeck.com/images/cards_small/6983839.jpg" alt="">
-          </div> <div class="cartaGaleriaCartas">
-              <img src="https://images.ygoprodeck.com/images/cards_small/6983839.jpg" alt="">
-          </div>
+      <div class="galeriaCartas" id="galeriaCartas">
+        
       </div>
+      <div class="listadoButton">
+      <button id="buttonAtras2"></button>
+      <button id="buttonAtras1"></button>
+      <button id="paginaActual"></button>
+      <button id="buttonAdelante1"></button>
+      <button id="buttonAdelante2"></button>
+    </div>
   </main>
-    <footer>
+  <div class="emergente">
+    <button>Ver Imagen detallada</button>
+    <div class="contenedorEmergente">
+    <div class="imagenGrande">
+      <div class="nombreYTipo">
+        <p class="texto">nombre</p>
+        <p class="texto">typo</p>
+      </div>
+      <div class="attackYDeff">
+        <p class="texto">poder</p>
+        <p class="texto">attack</p>
+        <p class="texto">defensa</p>
+      </div>
+      <div class="descripcion">
+        <p class="texto">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium fuga ipsa distinctio 
+        sequi eos eaque a blanditiis quam explicabo ullam magnam delectus molestias voluptatem aperiam odit ducimus, facere eligendi laudantium?</p>
+      </div>
+    </div>
+    <div class="cartaDetallada">
+      <img src="https://images.ygoprodeck.com/images/cards/6983839.jpg" alt="">
+    </div>
+    </div>
+  </div>
+  <footer>
 
     </footer>
             <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    <script src="javascript/variables.js" type="module"></script>
-    <script src="javascript/funciones.js" type="module"></script>
     <script src="javascript/main.js" type="module"></script>
 </body>
 </html>  
