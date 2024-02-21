@@ -14,9 +14,9 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<body id="body">
+  <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
           <img src="img/logo.png" alt="Logo" width="100" height="50">
@@ -28,73 +28,53 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              <a class="nav-link dropdown-toggle encabezado" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 Sort by Name
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="filtrarPorPrecio">
-                <a class="dropdown-item" href="#">Ascendent</a>
-                <a class="dropdown-item" href="#">Descendent</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item filtrosPorInicial" href="#" id="ascendent">Ascendent</a>
+                <a class="dropdown-item filtrosPorInicial" href="#" id="descendent">Descendent</a>
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              <a class="nav-link dropdown-toggle encabezado" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 Filter by Card Type
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="filtrarPorPrecio">
-                <a class="dropdown-item" href="#">Monster</a>
-                <a class="dropdown-item" href="#">Magic</a>
-                <a class="dropdown-item" href="#">Trap</a>
-                <a class="dropdown-item" href="#">Skill</a>
-                <a class="dropdown-item" href="#">Reset Filters</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item filtrosPorTipo" href="#" id="Monster">Monster</a>
+                <a class="dropdown-item filtrosPorTipo" href="#" id="Spell">Spell</a>
+                <a class="dropdown-item filtrosPorTipo" href="#" id="Trap">Trap</a>
+                <a class="dropdown-item filtrosPorTipo" href="#" id="Skill">Skill</a>
+                <a class="dropdown-item filtrosPorTipo" href="#" id="ResetFilters">Reset Filters</a>
               </div>
             </li>
           </ul>
-          <form class="d-flex me-3">
-            <input id="filtrarObjeto" class="form-control me-2 buscar" type="text" placeholder="Search by Card Name">
-          </form>
+          <div class="entryArea">
+            <input id="filtrarObjeto" class="input">
+            <div class="label" id="label">Search by Card Name</div>
+        </div>
         </div>
       </div>
     </nav>
   </header>
   <main>
-    <div class="filtros"></div>
+    <div class="filtros" id="filtros">
+  
+    </div>
     <div class="galeriaCartas" id="galeriaCartas">
        
     </div>
     <div class="listadoButton">
-    <button id="buttonAtras2"></button>
-    <button id="buttonAtras1"></button>
-    <button id="paginaActual"></button>
-    <button id="buttonAdelante1"></button>
-    <button id="buttonAdelante2"></button>
+    <button class="botonesGenerales" id="buttonAtras2"></button>
+    <button class="botonesGenerales" id="buttonAtras1"></button>
+    <button class="botonesGenerales paginaActual" id="paginaActual"></button>
+    <button class="botonesGenerales" id="buttonAdelante1"></button>
+    <button class="botonesGenerales" id="buttonAdelante2"></button>
     </div>
   </main>
-  <div class="emergente">
-    <button>Ver Imagen detallada</button>
-    <div class="contenedorEmergente">
-    <div class="imagenGrande">
-      <div class="nombreYTipo">
-        <p class="texto">nombre</p>
-        <p class="texto">typo</p>
-      </div>
-      <div class="attackYDeff">
-        <p class="texto">poder</p>
-        <p class="texto">attack</p>
-        <p class="texto">defensa</p>
-      </div>
-      <div class="descripcion">
-        <p class="texto">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium fuga ipsa distinctio 
-        sequi eos eaque a blanditiis quam explicabo ullam magnam delectus molestias voluptatem aperiam odit ducimus, facere eligendi laudantium?</p>
-      </div>
-    </div>
-    <div class="cartaDetallada">
-      <img src="https://images.ygoprodeck.com/images/cards/6983839.jpg" alt="">
-    </div>
-    </div>
-  </div>
+  
   <footer>
 
   </footer>
