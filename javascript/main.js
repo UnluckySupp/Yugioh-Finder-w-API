@@ -77,7 +77,7 @@ filtrarPorTexto.addEventListener("keyup", (e) => {
 const filtrosBotones = () =>{
     let filtrosDeLetras = document.createElement("div")
     filtrosDeLetras.classList.add("filtroDeLetras");
-    filtrosDeLetras.innerHTML=``;
+    filtros.innerHTML=``;
     for(let letra = 65; letra <= 90; letra++){
         const letraActual = String.fromCharCode(letra);
         const botonLetra = document.createElement("button");
@@ -87,6 +87,7 @@ const filtrosBotones = () =>{
         filtrosDeLetras.append(botonLetra);
         botonLetra.addEventListener("click", (event)=>{
             const inicial = event.target.id;
+            dataCartasFiltradas=dataCartas;
             filtrarPorInicial(dataCartasFiltradas, inicial);
             renderizarCartas(dataCartasFiltradas);
         });
