@@ -163,7 +163,7 @@ main .listadoButton .paginaActual::before {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(6, 45, 45, 0.7);
+  background-color: rgba(6, 45, 45, 0.8);
   z-index: 30;
   animation: show 0.2s ease;
 }
@@ -278,6 +278,7 @@ main .listadoButton .paginaActual::before {
   height: 800px;
   left: 30%;
   top: -100px;
+  background: linear-gradient(#FF1264, #FFEB13);
   background-color: white;
   border-radius: 1rem;
   transform: translateX(-50%);
